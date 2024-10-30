@@ -5,6 +5,7 @@ use simple_logger::SimpleLogger;
 mod server;
 mod client;
 mod message;
+mod db;
 use crate::server::Server;
 use crate::client::Client;
 
@@ -25,7 +26,7 @@ enum StartMode {
 }
 
 fn run_server() {
-    let server: Server = Server::new();
+    let mut server: Server = Server::new();
 
     server.listen();
 }
